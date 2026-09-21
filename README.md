@@ -1,5 +1,7 @@
 # Rocket Trajectory Simulator
 
+![CI](https://github.com/yavuzselimsert/rocket-trajectory-sim/actions/workflows/ci.yml/badge.svg)
+
 ![Flight Dashboard](flight_dashboard.png)
 
 A Python-based 2D simulation of a rocket launch, modeling thrust, gravity, 
@@ -123,11 +125,23 @@ python rocket_sim.py
 Prints a flight summary and saves `flight_dashboard.png` (trajectory, 
 altitude, and speed over time).
 
+![Flight Animation](flight_animation.gif)
+
 **Run the integration method comparison:**
 ```bash
 python compare_integrators.py
 ```
 Prints an error table and saves `integrator_comparison.png`.
+
+## Testing
+
+The project includes automated tests validating physical correctness — 
+mass conservation, apogee conditions, monotonicity constraints, and 
+energy consistency:
+
+```bash
+python -m pytest test_rocket_sim.py -v
+```
 
 ## Technologies
 
