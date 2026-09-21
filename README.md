@@ -3,6 +3,7 @@
 ![CI](https://github.com/yavuzselimsert/rocket-trajectory-sim/actions/workflows/ci.yml/badge.svg)
 
 ![Flight Dashboard](flight_dashboard.png)
+![Flight Animation](flight_animation.gif)
 
 A Python-based 2D simulation of a rocket launch, modeling thrust, gravity, 
 variable mass, and aerodynamic drag using numerical integration.
@@ -22,9 +23,12 @@ variable mass, and aerodynamic drag using numerical integration.
 ## How It Works
 
 The simulator solves the rocket's 2D equations of motion:
+
+```
 F_net_x = F_thrust_x + F_drag_x
 F_net_y = F_thrust_y + F_drag_y - F_weight
 a = F_net / m(t)
+```
 where mass `m(t)` decreases as propellant burns, thrust is fixed at a 
 launch angle (no thrust vectoring), and drag opposes the velocity vector:
 F_drag = 0.5 × ρ(h) × v² × Cd × A
@@ -99,6 +103,7 @@ For a launch angle of 75° from horizontal:
 
 ## Project Structure
 
+```
 rocket-trajectory-sim/
 ├── rocket_sim.py # Main 2D flight simulation
 ├── compare_integrators.py # Euler vs RK4 accuracy comparison
@@ -106,6 +111,7 @@ rocket-trajectory-sim/
 ├── integrator_comparison.png
 ├── requirements.txt
 └── README.md
+```
 
 
 ## Installation
@@ -125,7 +131,6 @@ python rocket_sim.py
 Prints a flight summary and saves `flight_dashboard.png` (trajectory, 
 altitude, and speed over time).
 
-![Flight Animation](flight_animation.gif)
 
 **Run the integration method comparison:**
 ```bash
